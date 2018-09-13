@@ -1,0 +1,29 @@
+#Ex: 1.	Make a program that generates a list that has all squared values of integers from 1 to 100, i.e., 
+#like this: [1, 4, 9, 16, 25, 36, …, 10000]
+li = list(range(1, 1001))
+new_l = []
+for x in li:
+  for i in li:
+    if x / i == i:
+      new_l.append(x)
+    else:
+      continue
+print(new_l)
+
+#Ex.2:Make a program that prompts the user to input the name of a car, 
+#the program should save the input in a list and ask for another, and then another, until the user inputs ‘q’, 
+#then the program should stop and the list of cars that was produced should be printed.
+car_li = []
+con = 0
+while con ==0 :
+  x = str(input("Please input the name of a car or press 'q' to quit: "))
+  if x == 'q':
+    break
+  elif x!= 'q':
+    car_li.append(x)
+print(car_li)
+
+#Ex.3:Start of with any list containing at least 10 elements, then print all elements in reverse order.
+li = list(range(1, 11))
+li.reverse()
+print(li)
