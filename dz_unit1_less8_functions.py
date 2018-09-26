@@ -25,13 +25,39 @@ make_country('Ukraine', 'Kyiv')
 #            The call make_operation(‘-’, 5, 5, -10, -20) should return 30
 #            The call make_operation(‘*’, 7, 6) should return 42
 def simple_calc(operation, *args):
+    '''If entered plus as operation performed operation on summing the arguments'''
     if operation == '+':
-        res = sum(i for i in args)
-    elif operation == '-':
-        li = []
-        li = list(args)
-
-    for i in li:
-            print(i)
-
-simple_calc('-', 7, 7, 2)
+        def sum(args):
+            res = args[0]
+            for el in args[1:]:
+                res += el
+            return print(res)
+        sum(args)
+    '''If entered minus as operation performed operation "-" the arguments'''
+    if operation == '-':
+        def differ(args):
+            res = args[0]
+            for el in args[1:]:
+                res -= el
+            return print(res)
+        differ(args)
+    '''If entered multiplication as operation all arguments are multiplied'''
+    if operation == '*':
+        def multi(args):
+            res = args[0]
+            for el in args[1:]:
+                res *= el
+            return print(res)
+        multi(args)
+    '''If entered divisio, arguments devided starting division on first argument'''
+    if operation == '/':
+        def divis(args):
+            res = args[0]
+            for el in args[1:]:
+                res /= el
+            return print(res)
+        divis(args)
+#test field
+simple_calc('+', 7, 7, 2)
+simple_calc('-', 5, 5, -10, -20)
+simple_calc('*', 7, 6)
